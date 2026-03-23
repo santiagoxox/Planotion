@@ -1,20 +1,38 @@
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import HomeScreen from './screens/HomeScreen';
+import SubjectsScreen from './screens/SubjectsScreen';
+import TimerScreen from './screens/TimerScreen';
+import StatsScreen from './screens/StatsScreen';
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <NavigationContainer>
       <StatusBar style="auto" />
-    </View>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+            if (route.name === 'Home') iconName = focused ? 'home' : 'home-outline';
+            else if (route.name === 'Subjects') iconName = focused ? 'book' : 'book-outline';
+            else if (route.name === 'Timer') iconName = focused ? 'timer' : 'timer-outline';
+            else if (route.name === 'Stats') iconName = focused ? 'bar-chart' : 'bar-chart-outline';
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+          tabBarActiveTintColor: '#1a1a2e',
+          tabBarInactiveTintColor: '#aaa',
+          tabBarStyle: { paddingBottom: 8, height: 60 },
+          headerShown: false,
+        })}>
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Subjects" component={SubjectsScreen} />
+        <Tab.Screen name="Timer" component={TimerScreen} />
+        <Tab.Screen name="Stats" component={StatsScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
