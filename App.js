@@ -25,7 +25,9 @@ export default function App() {
           },
           tabBarActiveTintColor: '#1a1a2e',
           tabBarInactiveTintColor: '#aaa',
-          tabBarStyle: { paddingBottom: 8, height: 60 },
+          tabBarStyle: { paddingBottom: 12, paddingTop: 8, height: 76 },
+          tabBarItemStyle: { paddingVertical: 4 },
+          tabBarLabelStyle: { fontSize: 12 },
           headerShown: false,
         })}>
         <Tab.Screen name="Home" component={HomeScreen} />
