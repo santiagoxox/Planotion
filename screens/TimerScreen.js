@@ -27,6 +27,10 @@ export default function TimerScreen() {
   useEffect(() => {
     totalSeconds.current = focusTime * 60;
     progressAnim.setValue(1);
+    if(!isRunning) {
+        setMinutes(focusTime);
+        setSeconds(0);
+    }
   }, [focusTime, isBreak]);
 
   useEffect(() => {

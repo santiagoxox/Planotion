@@ -8,6 +8,7 @@ import HomeScreen from './screens/HomeScreen';
 import SubjectsScreen from './screens/SubjectsScreen';
 import TimerScreen from './screens/TimerScreen';
 import StatsScreen from './screens/StatsScreen';
+import PlannerScreen from './screens/PlannerScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -34,7 +35,7 @@ export default function App() {
             headerShown: false,
           })}>
           <Tab.Screen name="Home" component={HomeScreen} />
-          <Tab.Screen name="Subjects" component={SubjectsScreen} />
+          <Tab.Screen name="Planner" component={PlannerScreen} />
           <Tab.Screen name="Timer" component={TimerScreen} />
           <Tab.Screen name="Stats" component={StatsScreen} />
         </Tab.Navigator>
