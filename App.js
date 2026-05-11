@@ -31,7 +31,7 @@ export default function App() {
               paddingBottom: 12,
               paddingTop: 8,
               height: 76,
-              backgroundColor: '#fff',
+              backgroundColor: '#fafafa',
               borderTopWidth: 0,
               shadowColor: '#1a1a2e',
               shadowOffset: { width: 0, height: -4 },
