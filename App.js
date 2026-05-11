@@ -45,7 +45,7 @@ export default function App() {
           <Tab.Screen name="Home" component={HomeScreen} />
           <Tab.Screen name="Planner" component={PlannerScreen} />
           <Tab.Screen name="Timer" component={TimerScreen} />
-          <Tab.Screen name="Stat" component={StatsScreen} />
+          <Tab.Screen name="Stats" component={StatsScreen} />
         </Tab.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>
